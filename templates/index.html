@@ -1,0 +1,18 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EV Market Performance Insights</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body>
+<header><h1>Electric vehicle market performance</h1>
+<p>Sales, battery technology, range, ratings and manufacturing by country, 2019–2025.</p>
+<nav><button class="tab on" data-t="dash">Dashboard</button><button class="tab" data-t="story">Story</button><button class="tab" data-t="about">Who it serves</button></nav></header>
+<main>
+<section id="dash" class="pane on"><iframe src="{{ dash }}" title="EV dashboard" loading="lazy"></iframe></section>
+<section id="story" class="pane"><iframe src="{{ story }}" title="EV story" loading="lazy"></iframe></section>
+<section id="about" class="pane prose">
+<h2>Emily Johnson, strategy director</h2><p>Which categories drive annual sales, who leads, and where satisfaction is highest.</p>
+<h2>David Chen, BI manager</h2><p>Manufacturer market share, battery mix and production by country.</p>
+<h2>Dr. Sarah Williams, mobility researcher</h2><p>How battery types, range and manufacturing shape adoption.</p></section>
+</main>
+<script>document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab,.pane').forEach(e=>e.classList.remove('on'));b.classList.add('on');document.getElementById(b.dataset.t).classList.add('on')})</script>
+</body></html>
